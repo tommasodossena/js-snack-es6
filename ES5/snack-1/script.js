@@ -22,13 +22,16 @@ var biciclette = [
 ];
 console.log(biciclette);
 
+// 2 - Inizializzare variabile per confrontare proprietà peso degli oggetti dell'array
 var leggera = biciclette[0];
 
+// 3 - Ciclo per confrontare proprietà peso degli oggetti dell'array
 for ( let i = 0; i < biciclette.length; i++) {
     if ( biciclette[i].peso < leggera.peso ) {
         leggera = biciclette[i];
     }
 }
 
+// 4 - Stampare il risultato
 console.log("La bibicletta più leggera è " + leggera.nome);
 
