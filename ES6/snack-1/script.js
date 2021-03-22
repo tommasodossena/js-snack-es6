@@ -26,11 +26,17 @@ console.log(biciclette);
 let leggera = null;
 
 // 3 - Ciclo per confrontare proprietà peso degli oggetti dell'array
-for (let i = 0; i < biciclette.length; i++) {
-    if ( leggera == null || biciclette[i].peso < leggera.peso ) {
-        leggera = biciclette[i];
+// for (let i = 0; i < biciclette.length; i++) {
+//     if ( leggera == null || biciclette[i].peso < leggera.peso ) {
+//         leggera = biciclette[i];
+//     }
+// }
+
+biciclette.forEach((element) => {
+    if ( leggera == null || element.peso < leggera.peso ) {
+        leggera = element;
     }
-}
+});
 
 // 4 - Stampare il risultato
 const { nome, peso } = leggera;

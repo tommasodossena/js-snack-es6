@@ -37,19 +37,26 @@ for ( let i = 0; i < squadre.length; i++) {
     squadre[i].falliSubiti = randomNumber(0, 12);
 
 }
-// console.log(squadre);
+console.log(squadre);
 
-// 3 - Creare nuovo array solo con nomi e falli subiti
-var contrasti = [];
+// METODO 1: CICLO FOR
+// 3A - Creare nuovo array solo con nomi e falli subiti
+// var contrasti = [];
 
-// 4 - Ciclo per inserire nel nuovo array proprietà nome e falliSubiti degli oggetti del vecchio array
-for ( let i = 0; i < squadre.length; i++ ) {
-    const { nome, punti, falliSubiti } = squadre[i];
-    contrasti.push({
-        nome: nome,
-        falliSubiti: falliSubiti,
-    });     
-}
+// 4A - Ciclo per inserire nel nuovo array proprietà nome e falliSubiti degli oggetti del vecchio array
+// for ( let i = 0; i < squadre.length; i++ ) {
+//     const { nome, falliSubiti } = squadre[i];
+//     contrasti.push({
+//         nome: nome,
+//         falliSubiti: falliSubiti,
+//     });     
+// }
+
+// METODO 2: UTILIZZO METODO MAP
+const contrasti = squadre.map((element) => {
+    let { nome, falliSubiti: falli } = element;
+    return {nome, falli};
+});
 
 // 5 - Stampare nuovo array 
 console.log(contrasti);
